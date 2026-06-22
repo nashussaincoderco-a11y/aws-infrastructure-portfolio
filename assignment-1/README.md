@@ -118,4 +118,77 @@ One of the mandatory fields for a NAT gateway is an Elastic IP because a static 
 
 
 
+## NAT Gateway 
+
+
+
+
+
+
+<img width="940" height="457" alt="image" src="https://github.com/user-attachments/assets/0197203c-d41b-4b49-9e03-8d82a5f05180" />
+
+
+
+
+
+
+
+<img width="1306" height="456" alt="image" src="https://github.com/user-attachments/assets/d09ae2b2-88dc-434b-8350-bdff1453daba" />
+
+
+
+
+
+
+
+
+
+
+## Route Tables 
+
+
+
+
+<img width="1246" height="369" alt="image" src="https://github.com/user-attachments/assets/0200ab1d-5767-4136-b8df-bdc07793285a" />
+
+
+
+
+
+
+<img width="1236" height="336" alt="image" src="https://github.com/user-attachments/assets/9259f1b2-6bad-487c-973e-8f4b6defb6e0" />
+
+
+
+
+
+
+
+<img width="1078" height="189" alt="image" src="https://github.com/user-attachments/assets/4ead494c-e993-4335-b6a0-deca61d24a96" />
+
+
+
+
+
+
+
+
+<img width="1221" height="199" alt="image" src="https://github.com/user-attachments/assets/ebb480de-c282-4bcf-b418-fd2e69ed86a0" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

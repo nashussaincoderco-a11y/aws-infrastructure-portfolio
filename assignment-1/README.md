@@ -54,6 +54,65 @@ These are the components that I had utilized on AWS to carry out this project:
 
 
 
+## VPC Created: 
+
+<img width="940" height="450" alt="image" src="https://github.com/user-attachments/assets/240dda4d-aa6f-4e1d-a0c9-230eed47ef3e" />
+
+
+
+
+## Subnets 
+
+
+<img width="940" height="825" alt="image" src="https://github.com/user-attachments/assets/fe82e128-be83-4974-9fdd-6ae05d54fc38" />
+
+
+
+
+
+
+
+
+<img width="940" height="825" alt="image" src="https://github.com/user-attachments/assets/0bf78ee5-7892-4db8-ae4f-596298ae8cc2" />
+
+
+
+
+
+
+
+
+<img width="940" height="174" alt="image" src="https://github.com/user-attachments/assets/7e5b325e-16bb-4dd8-9d0a-d2b142872e1c" />
+
+
+
+
+
+
+
+
+
+## Internet Gateway 
+
+
+
+<img width="940" height="425" alt="image" src="https://github.com/user-attachments/assets/d9e73fb9-3c8d-47f2-bd0e-c0110810b05e" />
+
+
+
+
+## Elastic IP 
+
+One of the mandatory fields for a NAT gateway is an Elastic IP because a static public address is required to be reserved and it is a strict configuration dependency. 
+
+
+
+
+
+<img width="940" height="277" alt="image" src="https://github.com/user-attachments/assets/e75a9361-5bbd-4657-9708-eeefb98c66ec" />
+
+
+
 
 
 

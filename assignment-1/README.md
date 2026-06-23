@@ -180,6 +180,50 @@ One of the mandatory fields for a NAT gateway is an Elastic IP because a static 
 
 
 
+## Public EC2 and Private EC2 Instances 
+
+
+
+
+<img width="1532" height="251" alt="image" src="https://github.com/user-attachments/assets/6b15914c-8577-49d0-bf8b-247b8915590d" />
+
+
+
+
+
+
+
+
+## Instances running 
+
+
+
+Instance running via the local terminal using SSH over the public internet using an Elastic IP address. 
+
+
+<img width="1514" height="293" alt="image" src="https://github.com/user-attachments/assets/d46e4873-515e-46bf-b891-cbb88ab14a4c" />
+
+
+
+
+
+
+
+Accessing my instance using the SSH protocol over the public internet connecting via the standard passwordless key-pair authentication. 
+
+
+
+<img width="1020" height="462" alt="image" src="https://github.com/user-attachments/assets/6d5c8ef2-fe2a-40c2-af34-f8de08a40cca" />
+
+
+
+
+
+
+
+
+
+
 
 
 

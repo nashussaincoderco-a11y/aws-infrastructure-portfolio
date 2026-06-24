@@ -222,6 +222,7 @@ Accessing my instance using the SSH protocol over the public internet connecting
 
 
 
+## 🧠 Lessons Learned & Troubleshooting
 
 
 
@@ -229,9 +230,54 @@ Accessing my instance using the SSH protocol over the public internet connecting
 
 
 
+* **What I Learnt:**
+
+I learnt the importance of route tables and how it plays a part in network segmentation subnets. Subnets are either public or private based on how their default traffic routes are defined. 
 
 
 
+
+* **The Challenge:**
+
+After provisioning the private instance, it was completely isolated and unable to run system package updates (sudo apt update), as it lacked an outbound internet connection. 
+
+
+
+
+* **The Fix:**
+
+
+I updated the private subnet's route table to explicitly forward all outbound internet traffic (0.0.0.0/0) through the newly deployed NAT Gateway instead of trying to hit an Internet Gateway directly. 
+
+
+
+
+
+
+## Key Takeaways
+
+### Security - The power of data protection 
+
+
+I learnt how to effectively protect data within infrastructure by placing the app instance in a private subnet with no public IP. This gave me the understanding of creating a security boundary by not exposing databases and application layers to the public internet. 
+
+
+
+### NAT Gateway - The One-way Network Traffic Control
+
+
+I was effectively able to put the NAT Gateway to action by isolating resources and ensure they can securely reach out to the internet for updates and patches. Whilst this is in process, NAT Gateeway also ensures that no other users on the internet is able to initiate a connection back into the instances to exploit it. 
+
+
+
+### Route Tables - The traffic controllers and directors 
+
+
+Configuring Route Tables gave me more control of data flow for my subnets and resources. It is what enabled me to create the public and private boundaries. For example:
+
+
+*  I set a rule on the Public Subnet for any destination on 0.0.0.0/0 (the internet) to send it directly to the internet Gateway. This allows the Web Server to freely communicate back and forth with external users over the web. 
+*  Whereas for the private subnet route table, I set a configuration if traffic is looking for 0.0.0.0/0 (the internet), it will direct it straight to the internal NAT Gateway. This will block hackers from getting into the App instance while allowing it to safely request outbound files or updates. 
 
 
 

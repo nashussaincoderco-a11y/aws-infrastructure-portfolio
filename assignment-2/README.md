@@ -110,12 +110,38 @@ Virtual firewalls that are linked implementing strict isolation rules so the ser
 
 
 
-* ** ALB Target group - A grouping resource used to manage backend instances and track system stability through automated health check. 
+<img width="940" height="305" alt="image" src="https://github.com/user-attachments/assets/e8afbacd-7b03-4684-9b7d-460e3730ace6" />
+
+
+
+
+
+### ALB Target group 
+
+
+
+A grouping resource used to manage backend instances and track system stability through automated health check. 
+
+
+Configured an HTTP (Port 80) target group associated with the ALB. Successfully registered backend compute instances across seperate Availability Zones enabling automated active health check to ensure traffic is only routed to operational web nodes. 
+
+
+
+
+<img width="1812" height="774" alt="image" src="https://github.com/user-attachments/assets/5f352c8a-65ed-47a6-8ff6-2fe639b0ad88" />
+
 
 
 
 ## Instances running 
 
+
+<img width="940" height="488" alt="image" src="https://github.com/user-attachments/assets/36e4a040-643a-44dc-b02d-eee2875e40e2" />
+
+
+
+
+<img width="940" height="491" alt="image" src="https://github.com/user-attachments/assets/6c906202-2a3a-49f0-9750-ca8dc9a3254f" />
 
 
 

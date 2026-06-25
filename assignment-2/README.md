@@ -154,10 +154,60 @@ Configured an HTTP (Port 80) target group associated with the ALB. Successfully 
 
 
 
+#### High Availabiity & Fault Tolerant Design 
+
+
+Distributing target nodes across multiple availability zones showcases the core cloud concepts of designing for failure. It taught me a lesson of how the ALB automatically monitors target group health and moves away from anything unhealthy in the infrastructure. 
+
+
+
+#### Automated Infrastructure 
+
+
+I used the EC2 User Data to write initialization Bash Scripts and taught me the value of fixed infrastructure. I was able to orchestrate automated updates and package deployments (httpd) at the configuration phase which ensures consistent server states without manual intervention. 
+
 
 ### The Challenge: 
+
+
+During the initial deployment testing, I attempted to connect to the public Application Load Balancer DNS endpoint but was resulting in a **"Server Not Found" / Connection Timeout** error in the browser, despite the backend targets showing as healthy.
+
+
+
+<img width="940" height="528" alt="image" src="https://github.com/user-attachments/assets/0649dea1-b602-4b19-8283-ba8c03d36152" />
+
 
 
 
 
 ### The Fix: 
+
+
+I isolated the network boundary by editing the backend web server's security group inbound rules:
+1. Navigated to the Security Group configuration (`Naseem-webserver-ig`).
+2. Added a rule for **HTTP (Port 80)** traffic.
+3. Connected the security groups together by setting the **Source** exclusively to the Application Load Balancer's specific Security Group ID (`sg-094d0a426698d6181`)
+
+
+
+
+<img width="940" height="305" alt="image" src="https://github.com/user-attachments/assets/ac199291-395a-4b9b-b444-4ceff26a76c5" />
+
+
+
+
+### The Result (Successful Verification): 
+
+
+
+Saving the correct security group rule fixed the issue, allowing the load balancer to successfully toggle traffic between Web Server 1 and Web Server 2.
+
+
+
+<img width="940" height="491" alt="image" src="https://github.com/user-attachments/assets/cc37d4a4-7701-4dce-b101-5cfc332564bc" />
+
+
+
+
+
+

@@ -41,4 +41,6 @@ This Architecture matters because it eliminates server management overhead, take
 
 1. DNS Resolution: Client enters the custom domain into their browser > Amazon Route 53 processes the request via an alias A-record > The domain is directly resolved to the CDN distribution.
 2. Secure Global Connection: User establishes an encrypted connection over HTTPS (Port 443) > Connect via the closes edge location > Secure transport is validated using an SSL/TLS Certificate managed by AWS certiicate manager
-3. Edge Cache Optimization & Delivery: Cloudfront liaises cached assets instantly from the closest global edge location. Whenever there is a cached miss, it securely grabs the objects from the backend Amazon S3 hosting bucket. 
+3. Edge Cache Optimization & Delivery: Cloudfront liaises cached assets instantly from the closest global edge location. Whenever there is a cached miss, it securely grabs the objects from the backend Amazon S3 hosting bucket.
+
+Test

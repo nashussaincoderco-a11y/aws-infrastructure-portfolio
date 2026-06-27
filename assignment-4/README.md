@@ -36,3 +36,131 @@ This project is an important concept in DevOps and Cloud Architecture. Serverles
   
 <img width="1152" height="918" alt="AWS Assignment 4 diagram" src="https://github.com/user-attachments/assets/82c56f78-8a91-4f66-a5e9-c5b66b634a02" />
 
+
+### Breakdown for what is happening in the Architecture: 
+
+1. The Trigger: A User uses curl/Postman to send a web request ( POST ) containing data on the API Gateway
+2. The Bridge: API Gateway acts as the front door by securely obtaining the request and passing it directly to AWS Lambda.
+3. The Brains: AWS Lambda runs a quick script to process the incoming data and assigns it a unique ID number.
+4. The Storage: Lambda automatically pushes that processed information into a DynamoDB database called students.
+5. Behind the Scenes: AWS IAM ensures the code only has permission to do its specific job while CloudWatch watches for and logs any errors.
+
+
+
+
+## Key Components: 
+
+
+### Lambda Function
+
+<img width="1550" height="410" alt="image" src="https://github.com/user-attachments/assets/9f962f31-3029-4651-b977-2279fd5abf35" />
+
+
+
+### Lambda Function Policy 
+
+
+<img width="940" height="329" alt="image" src="https://github.com/user-attachments/assets/881cd9bb-d8cf-4459-8016-4fbadf0fd531" />
+
+
+
+
+
+
+<img width="940" height="327" alt="image" src="https://github.com/user-attachments/assets/78dda682-f592-47f6-a7a3-edfaa66c917d" />
+
+
+
+
+### Lambda Function Overview 
+
+
+
+
+<img width="1510" height="844" alt="image" src="https://github.com/user-attachments/assets/65fe16a1-0ace-4ad4-bd80-d758bf0ae11a" />
+
+
+
+
+
+### Lambda Code
+
+
+Below is the clean Python script deployed inside the AWS Lambda environment to handle API execution and payload ingestion:
+
+
+```python
+import json
+import boto3
+import uuid
+from datetime import datetime
+
+dynamodb = boto3.resource('dynamodb', region_name='eu-west-2')
+table = dynamodb.Table('students')
+
+def lambda_handler(event, context):
+    print("Received API Gateway event: ", json.dumps(event))
+    
+    try:
+        body = event.get('body', None)
+        if body is not None:
+            payload = json.loads(body) if isinstance(body, str) else body
+        else:
+            payload = event
+            
+        name = payload.get('name', 'Unknown')
+        module = payload.get('module', 'AWS')
+        
+        student_id = str(uuid.uuid4())
+        current_time = datetime.utcnow().isoformat() + 'Z'
+        
+        db_item = {
+            'id': student_id,
+            'timestamp': current_time,
+            'payload': {
+                'name': name,
+                'module': module
+            }
+        }
+        
+        table.put_item(Item=db_item)
+        
+        return {
+            'statusCode': 201,
+            'headers': {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
+            'body': json.dumps({
+                'message': 'Student data successfully saved!',
+                'generated_id': student_id,
+                'saved_item': db_item
+            })
+        }
+        
+    except Exception as e:
+        print(f"CRITICAL FAULT: {str(e)}")
+        return {
+            'statusCode': 500,
+            'headers': {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
+            'body': json.dumps({
+                'error': 'Internal Server Error',
+                'error_details': str(e)
+            })
+        }
+```
+
+
+
+
+### DynamoDB 
+
+
+
+### API Gateway 
+
+
+

@@ -56,11 +56,20 @@ This project is an important concept in DevOps and Cloud Architecture. Serverles
 Confirmation of the API Gateway being successfully configured for the live trigger to execute the backend code within the Lambda Console. So the API Gateway is set up as the front-door trigger to execute the backend code that receives data sent from the web request, processes it by generating a unique ID number along with marking the exact current time and then saves all the formatted information directly into the database called "students".  
 
 
+
 <img width="1550" height="410" alt="image" src="https://github.com/user-attachments/assets/9f962f31-3029-4651-b977-2279fd5abf35" />
 
 
 
 ### Lambda Function Policy 
+
+
+This is the JSON code inside the security policy. I created a custom security permission policy named student-api-dynamo-write directly to the function's execution role. 
+
+
+I am giving the Lambda function permission only to write data (dynamodb:PutItem) specifically into your students database table and nowhere else. 
+
+
 
 
 <img width="940" height="329" alt="image" src="https://github.com/user-attachments/assets/881cd9bb-d8cf-4459-8016-4fbadf0fd531" />
@@ -70,7 +79,11 @@ Confirmation of the API Gateway being successfully configured for the live trigg
 
 
 
+This is the AWS IAM Role dashboard for my Lambda function which shows that the custom security permission policy named student-api-dynamo-write has been created and attached to the function's execution role. This allows the configuration my AWS Lambda function to have the exact security permissions it needs to talk to the database by securely connecting to the Amazon DynamoDB and save the student records into the table while blocking it out from other databases and services wihin my AWS account. 
+
+
 <img width="940" height="327" alt="image" src="https://github.com/user-attachments/assets/78dda682-f592-47f6-a7a3-edfaa66c917d" />
+
 
 
 

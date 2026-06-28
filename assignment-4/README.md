@@ -53,6 +53,9 @@ This project is an important concept in DevOps and Cloud Architecture. Serverles
 
 ### Lambda Function
 
+Confirmation of the API Gateway being successfully configured for the live trigger to execute the backend code within the Lambda Console. So the API Gateway is set up as the front-door trigger to execute the backend code that receives data sent from the web request, processes it by generating a unique ID number along with marking the exact current time and then saves all the formatted information directly into the database called "students".  
+
+
 <img width="1550" height="410" alt="image" src="https://github.com/user-attachments/assets/9f962f31-3029-4651-b977-2279fd5abf35" />
 
 

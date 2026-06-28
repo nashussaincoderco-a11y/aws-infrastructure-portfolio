@@ -160,7 +160,18 @@ def lambda_handler(event, context):
 
 
 
+
+<img width="1852" height="797" alt="image" src="https://github.com/user-attachments/assets/71c37b57-c2b0-432e-9bab-d8201f20b7eb" />
+
+
+
+
 ### API Gateway 
 
+
+
+
+
+<img width="1833" height="792" alt="image" src="https://github.com/user-attachments/assets/da2e42e0-8dfe-4804-9e35-02d26f998cd7" />
 
 

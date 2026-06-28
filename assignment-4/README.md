@@ -176,6 +176,9 @@ def lambda_handler(event, context):
 ### DynamoDB 
 
 
+This is the Amazon DynamoDB dashboard for the students database table which confirms that it is active. It is also set to cost-effective and on-demand scaling currently storing data items. 
+
+
 
 
 <img width="1852" height="797" alt="image" src="https://github.com/user-attachments/assets/71c37b57-c2b0-432e-9bab-d8201f20b7eb" />
@@ -186,9 +189,81 @@ def lambda_handler(event, context):
 ### API Gateway 
 
 
+This is a confirmation of the API Gateway routing web requests through a /submit path straight to the Lambda backend code. 
+
 
 
 
 <img width="1833" height="792" alt="image" src="https://github.com/user-attachments/assets/da2e42e0-8dfe-4804-9e35-02d26f998cd7" />
+
+
+
+
+
+## Testing 
+
+
+### Test using curl 
+
+
+<img width="940" height="215" alt="image" src="https://github.com/user-attachments/assets/e0ac14cd-3fbd-4246-8e4b-d0de61ec35c8" />
+
+
+
+<img width="940" height="374" alt="image" src="https://github.com/user-attachments/assets/e3bbfcd5-1a82-47a1-a396-62f451da8ec5" />
+
+
+
+### Test using Postman 
+
+
+
+<img width="940" height="567" alt="image" src="https://github.com/user-attachments/assets/b8336ec8-8cf4-44c2-baca-8a74964fa4b0" />
+
+
+
+
+
+<img width="940" height="412" alt="image" src="https://github.com/user-attachments/assets/e2d8552c-6bba-459d-ac1c-2e7cce1a0106" />
+
+
+
+
+##  Lessons Learned & Troubleshooting
+### What I Learnt:
+
+* Serverless Development with AWS Lambda: I learnt how to effectively write backend code in python to automatically catch web requests, generate custom UUID data and handle system errors. It gives each student a unique ID and then save the data.
+* API Management via API Gateway: I learnt how to build public web interfaces using HTTP routes with (/submit) and POST methods creating a public web link that takes data fron the user and passes it directly to your backend code.
+* NoSQL Database Infrastructure: I learnt how to provision, configure and monitor an Amazon DynamoDB Database table that automatically scales to handle data without server management.
+* Cloud Security Architecture (IAM): I gained a better understanding of cloud security best practices by creating a custom Identity and Access Management policies. This gave me knowledge on how to protect data assets using precision "least privilege" access permissions.
+
+
+
+
+
+
+### The Challenge: [What broke while you were building it?]
+
+
+
+When first testing the web link, the API returned error messages because the backend code couldn't read or understand the data being sent to it. Incoming request data wasn't being correctly decoded or parsed by the backend code. 
+
+
+
+### The Fix: How did you solve it?
+
+
+Fixed the backend code so it could properly read the incoming text format, json.loads() and converted it into data the database understood. I also double-checked that the API Gateway settings were sending the full data package without altering it.
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -91,6 +91,7 @@ This is the AWS IAM Role dashboard for my Lambda function which shows that the c
 ### Lambda Function Overview 
 
 
+This dashboard provides a complete overview of the AWS Lambda function showing both its structure and the public web link (API endpoint) used to send student data to the application. 
 
 
 <img width="1510" height="844" alt="image" src="https://github.com/user-attachments/assets/65fe16a1-0ace-4ad4-bd80-d758bf0ae11a" />

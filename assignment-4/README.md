@@ -206,8 +206,15 @@ This is a confirmation of the API Gateway routing web requests through a /submit
 ### Test using curl 
 
 
+
+I used the curl command in my terminal to send a student's data "Mo" to the public API link receiving successful reply with a newly generated unique ID. 
+
+
+
 <img width="940" height="215" alt="image" src="https://github.com/user-attachments/assets/e0ac14cd-3fbd-4246-8e4b-d0de61ec35c8" />
 
+
+The test student was successfully processed and saved permanently inside the database table. 
 
 
 <img width="940" height="374" alt="image" src="https://github.com/user-attachments/assets/e3bbfcd5-1a82-47a1-a396-62f451da8ec5" />
@@ -218,10 +225,14 @@ This is a confirmation of the API Gateway routing web requests through a /submit
 
 
 
+I also got a successful test in Postman sending a student record named "Naseem" through the API link and getting back confirmation message. 
+
+
+
 <img width="940" height="567" alt="image" src="https://github.com/user-attachments/assets/b8336ec8-8cf4-44c2-baca-8a74964fa4b0" />
 
 
-
+The is confirmation that the data for both students was successfully saved and stored. 
 
 
 <img width="940" height="412" alt="image" src="https://github.com/user-attachments/assets/e2d8552c-6bba-459d-ac1c-2e7cce1a0106" />

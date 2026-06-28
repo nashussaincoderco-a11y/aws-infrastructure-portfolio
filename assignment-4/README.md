@@ -67,7 +67,7 @@ Confirmation of the API Gateway being successfully configured for the live trigg
 This is the JSON code inside the security policy. I created a custom security permission policy named student-api-dynamo-write directly to the function's execution role. 
 
 
-I am giving the Lambda function permission only to write data (dynamodb:PutItem) specifically into your students database table and nowhere else. 
+I am giving the Lambda function permission only to write data (dynamodb:PutItem) specifically into the students database table and nowhere else. 
 
 
 

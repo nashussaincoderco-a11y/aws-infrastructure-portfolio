@@ -31,7 +31,8 @@ This Architecture matters because it eliminates server management overhead, take
 
 
 
-<img width="1260" height="848" alt="AWS Assignment 3 Diagram 2" src="https://github.com/user-attachments/assets/4e1dce7c-5181-4793-83e7-1a0647cae157" />
+<img width="1071" height="848" alt="Assignment 3 diagram 2" src="https://github.com/user-attachments/assets/22cc4c5f-bafd-42d6-b07c-81918406f422" />
+
 
 
 
